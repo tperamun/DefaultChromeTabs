@@ -10,8 +10,9 @@ GOOGLE_CALENDAR_URL = "https://calendar.google.com/calendar/r/week"
 GOOGLE_CHATS_URL = "https://chat.google.com/"
 YOUTUBE_URL = "https://www.youtube.com/"
 
-
-driver = webdriver.Chrome("./chromedriver")
+options = webdriver.ChromeOptions()
+options.add_argument("user-data-dir=/home/timal/.config/google-chrome/")
+driver = webdriver.Chrome(executable_path="./chromedriver", chrome_options=options)
 # driver.maximize_window()
 
 driver.get(MESSENGER_URL)
